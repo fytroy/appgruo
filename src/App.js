@@ -7,7 +7,7 @@ import {
     signOut,
     onAuthStateChanged,
     signInAnonymously,
-    signInWithCustomToken,
+    // signInWithCustomToken, // Removed as it's not used in this deployment context
     updateProfile
 } from 'firebase/auth';
 import {
