@@ -22,15 +22,27 @@ function App() {
     useEffect(() => {
         try {
             // Access Firebase config from environment variables (e.g., in Netlify)
-            // For local development, you will temporarily hardcode this in step 4 below.
-            const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG || '{apiKey: "AIzaSyAO2BpX-H8rG8Q1UD-q_X7jzshYgcmiB3w",
-                  authDomain: "appgruo.firebaseapp.com",
-                  projectId: "appgruo",
-                  storageBucket: "appgruo.firebasestorage.app",
-                  messagingSenderId: "738965854785",
-                  appId: "1:738965854785:web:cc3442eb375caf692684c0",
-                  measurementId: "G-SQXLRV1R1L"};
-            const appId = process.env.REACT_APP_APP_ID || 'default-app-id';
+            // FOR LOCAL DEVELOPMENT: You MUST temporarily replace the line below
+            // with your actual Firebase config object directly, NOT a JSON string.
+            // Example:
+            // const firebaseConfig = {
+            //   apiKey: "YOUR_API_KEY",
+            //   authDomain: "YOUR_AUTH_DOMAIN",
+            //   projectId: "YOUR_PROJECT_ID",
+            //   storageBucket: "YOUR_STORAGE_BUCKET",
+            //   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            //   appId: "YOUR_FIREBASE_APP_ID",
+            //   measurementId: "YOUR_MEASUREMENT_ID"
+            // };
+            // const appId = firebaseConfig.projectId;
+            const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG || {apiKey: "AIzaSyAO2BpX-H8rG8Q1UD-q_X7jzshYgcmiB3w",
+  authDomain: "appgruo.firebaseapp.com",
+  projectId: "appgruo",
+  storageBucket: "appgruo.firebasestorage.app",
+  messagingSenderId: "738965854785",
+  appId: "1:738965854785:web:cc3442eb375caf692684c0",
+  measurementId: "G-SQXLRV1R1L"} );
+            const appId = process.env.REACT_APP_APP_ID || '1:738965854785:web:cc3442eb375caf692684c0';
 
             // Crucial check: if config is missing, stop and show error
             if (Object.keys(firebaseConfig).length === 0 || !firebaseConfig.projectId) {
