@@ -1,18 +1,4 @@
-# Base directory for the build (usually where package.json is)
-[build]
-publish = "build"  # The directory containing your built React app (create-react-app default)
-command = "npm run build" # The command to build your React app
-
-# Redirects and other settings (optional, but common for SPAs)
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-
-# You can also add environment variables here, but Netlify UI is often preferred for secrets
-# [build.environment]
-#   REACT_APP_FIREBASE_API_KEY = "AIzaSyAO2BpX-H8rG8Q1UD-q_X7jzshYgcmiB3w"
-#   REACT_APP_FIREBASE_AUTH_DOMAIN = "appgruo.firebaseapp.com"
-#   # etc.
-# These would correspond to the `__FIREBASE_CONFIG` and `__APP_ID` environment variables
-# you set in the Netlify UI, as described in the deployment guide.
