@@ -52,8 +52,14 @@ function App() {
     // Initialize Firebase and set up auth listener
     useEffect(() => {
         try {
-            const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG || '{}');
-            const appId = process.env.REACT_APP_APP_ID || 'default-app-id';
+            const firebaseConfig = JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG || '{ apiKey: "AIzaSyAO2BpX-H8rG8Q1UD-q_X7jzshYgcmiB3w",\n' +
+                '  authDomain: "appgruo.firebaseapp.com",\n' +
+                '  projectId: "appgruo",\n' +
+                '  storageBucket: "appgruo.firebasestorage.app",\n' +
+                '  messagingSenderId: "738965854785",\n' +
+                '  appId: "1:738965854785:web:cc3442eb375caf692684c0",\n' +
+                '  measurementId: "G-SQXLRV1R1L"}');
+            const appId = process.env.REACT_APP_APP_ID || '1:738965854785:web:cc3442eb375caf692684c0';
 
             const app = initializeApp(firebaseConfig);
             const firestore = getFirestore(app);
