@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // Optional: If you have global CSS outside Tailwind
+// import './index.css'; // Removed this import as styling is handled by App.js
 import App from './App';
 import reportWebVitals from './reportWebVitals'; // For performance monitoring
 
